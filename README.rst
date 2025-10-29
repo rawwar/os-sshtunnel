@@ -14,7 +14,18 @@ See also: https://github.com/paramiko/paramiko/blob/master/demos/forward.py
 Requirements
 -------------
 
-* `paramiko`_
+* Python 3.9 or later
+* `paramiko`_ 4.0 or later
+
+**Note**: Version 0.5.0+ requires Python 3.9+ and paramiko 4.0+. If you need Python 2.x or Python 3.4-3.8 support, please use version 0.4.0.
+
+**Breaking Changes in 0.5.0**:
+
+- **DSA keys are no longer supported**. DSA was deprecated in OpenSSH 7.0 (2016) and removed from paramiko 4.0 due to security concerns. If you're using DSA keys, you'll need to:
+
+  - Generate new RSA, ECDSA, or Ed25519 keys
+  - Update your SSH server configuration to use the new keys
+  - Example: ``ssh-keygen -t rsa -b 4096`` or ``ssh-keygen -t ed25519``
 
 Installation
 ============
