@@ -112,8 +112,7 @@ setup(
             'tox>=1.8.1',
         ],
         'build_sphinx': [
-            'sphinx',
-            'sphinxcontrib-napoleon',
+            'sphinx>=4.0',
         ],
     },
 
