@@ -237,7 +237,7 @@ CLI usage
                      ssh_address
 
     Pure python ssh tunnel utils
-    Version 0.4.0
+    Version 0.5.0
 
     positional arguments:
       ssh_address           SSH server IP address (GW for SSH tunnels)
@@ -258,7 +258,7 @@ CLI usage
                             Example: -R 10.10.10.10: 10.10.10.10:5900
       -L [IP:PORT ...], --local_bind_address [IP:PORT ...]
                             Local bind address sequence: ip_1:port_1 ip_2:port_2 ... ip_n:port_n
-                            Elements may also be valid UNIX socket domains:
+                            Elements may also be valid UNIX socket domains: 
                             /tmp/foo.sock /tmp/bar.sock ... /tmp/baz.sock
                             Equivalent to ssh -LPORT:xxxxxxxxx:xxxx, being the local IP address optional.
                             By default it will listen in all interfaces (0.0.0.0) and choose a random port.
