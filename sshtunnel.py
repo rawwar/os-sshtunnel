@@ -25,17 +25,11 @@ from select import select
 from binascii import hexlify
 
 import paramiko
+import queue
+import socketserver
 
-if sys.version_info[0] < 3:  # pragma: no cover
-    import Queue as queue
-    import SocketServer as socketserver
-    string_types = basestring,  # noqa
-    input_ = raw_input  # noqa
-else:  # pragma: no cover
-    import queue
-    import socketserver
-    string_types = str
-    input_ = input
+string_types = str
+input_ = input
 
 
 __version__ = '0.4.0'
@@ -208,7 +202,7 @@ def create_logger(logger=None,
     if add_paramiko_handler:
         _check_paramiko_handlers(logger=logger)
 
-    if capture_warnings and sys.version_info >= (2, 7):
+    if capture_warnings:
         logging.captureWarnings(True)
         pywarnings = logging.getLogger('py.warnings')
         pywarnings.handlers.extend(logger.handlers)
