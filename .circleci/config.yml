@@ -116,7 +116,7 @@ jobs:
       - run:
           name: Build artifact
           command: |
-            pipenv run python setup.py bdist_egg bdist_wheel sdist
+            pipenv run python -m build
       - run:
           name: Check artifacts
           command: pipenv run twine check dist/*
@@ -141,7 +141,7 @@ jobs:
       - run:
           name: Build artifact
           command: |
-            pipenv run python setup.py bdist_egg bdist_wheel sdist
+            pipenv run python -m build
       - run:
           name: Upload to PyPI
           command: >-
